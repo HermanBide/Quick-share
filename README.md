@@ -24,7 +24,8 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 ![Screenshot from 2021-11-01 16-58-47](https://user-images.githubusercontent.com/89764557/139757954-20387eee-c5b7-42db-9e66-d934797bb347.png)
 
 ## ERD (Entity Relationship Diagram)
-![Screenshot from 2021-11-02 11-49-08](https://user-images.githubusercontent.com/89764557/139926727-e77c8cbc-b936-4f0b-9b43-aad28d3e03a4.png)
+
+![Screenshot from 2021-11-02 13-45-25](https://user-images.githubusercontent.com/89764557/139949039-290ea6db-132f-43de-bbad-9ce860530379.png)
 ## Additional Technologies
 
 If you plan on using technologies outside of the scope of the course's content, please add them here. If you have developed any prototypes to test the technology, you can link them here as well if you'd like feedback.
