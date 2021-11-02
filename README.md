@@ -24,14 +24,14 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 ![Screenshot from 2021-11-01 16-58-47](https://user-images.githubusercontent.com/89764557/139757954-20387eee-c5b7-42db-9e66-d934797bb347.png)
 
 ## ERD (Entity Relationship Diagram)
-![Screenshot from 2021-11-02 10-43-18](https://user-images.githubusercontent.com/89764557/139917849-3572a0a3-43b1-4c9a-b245-5aac54a4bc94.png)
+![Screenshot from 2021-11-02 11-49-08](https://user-images.githubusercontent.com/89764557/139926727-e77c8cbc-b936-4f0b-9b43-aad28d3e03a4.png)
 ## Additional Technologies
 
 If you plan on using technologies outside of the scope of the course's content, please add them here. If you have developed any prototypes to test the technology, you can link them here as well if you'd like feedback.
 
 ## MVP/PostMVP
 
-The functionality will then be divided into two separate lists: MVP and PostMVP.  Carefully decide what is placed into your MVP, as the client will expect this functionality to be implemented upon project completion.  
+post images and videos save to favories and post in user channel 
 
 #### MVP 
 *These are examples only. Replace with your own MVP features.*
