@@ -6,8 +6,6 @@ import { deletePost } from "../services";
 import { addFavorite } from "../services";
 import "./Post.css";
 
-import Movie from "./Movie";
-
 const Post = (props) => {
   const [posts, setPosts] = useState([]);
 
@@ -15,7 +13,8 @@ const Post = (props) => {
     getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
   }, []);
 
-  const handleClick = async (postId) => {
+  const handleClick = async (postId, e) => {
+    e.preventDefault();
     if (props.user.favorites.find((favorite) => favorite.post.id === postId)) {
       return;
     }
@@ -36,7 +35,7 @@ const Post = (props) => {
           <h4>Rating: {post.rating}</h4>
           <h4>Genre: {post.genre}</h4>
           <button onClick={() => handleClick(post.id)}>⭐️</button>
-          <button onClick={() => updatePost(post.id)}>edit</button>
+          <Link to={`/postForm/${post.id}`}><button>edit</button></Link>
           <button onClick={() => deletePost(post.id)}>delete</button>
         </div>
       ))}

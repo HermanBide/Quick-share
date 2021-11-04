@@ -7,18 +7,15 @@ import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import Movie from './Movie';
 import './Navbar.css'
 
-
-
 const Navbar = (props) => {
-
-    const handleClick = async() => {
+    const handleClick = async(e) => {
+        e.preventDefault();
         await logout();
         props.setUser(null)
       };
 
     return (
         <div className='nav'>
-
         {props.user ? (
           <>
             <nav className="navbar">
@@ -37,8 +34,8 @@ const Navbar = (props) => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/Movie" className="navItem">
-                      Movies
+                    <Link to="/PostForm" className="navItem">
+                      Post a review
                     </Link>
                   </li>
                 </ul>
@@ -51,10 +48,7 @@ const Navbar = (props) => {
                   </button>
                 </header>
               </div>
-          
             </nav>
-  
-  
             <header>
               <div className="mobile_nav">
                 <ul className="nav_links">
@@ -62,7 +56,6 @@ const Navbar = (props) => {
                     <Link to="/Post" className="navItem">
                       <HomeIcon className="icon" />
                     </Link>
-  
                     <Link to="/Movie" className="navItem">
                       <LocalMoviesIcon className="icon" />
                     </Link>

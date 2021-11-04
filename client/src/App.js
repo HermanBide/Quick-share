@@ -18,7 +18,7 @@ function App() {
     <div className="App">
      <Navbar user={user} setUser={setUser} />
 
-      <>
+      <Switch>
         <Route path="/register">
           <Register setUser={setUser} />
         </Route>
@@ -28,7 +28,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          <Post />
+          <Post setUser={setUser}/>
         </Route>
 
         <Route path="/Movie">
@@ -36,17 +36,21 @@ function App() {
         </Route>
 
         <Route path="/PostForm">
-          <PostForm />
+          <PostForm setUser={setUser}/>
+        </Route>
+
+        <Route path="/PostForm/:id">
+          <PostForm setUser={setUser}/>
         </Route>
 
         <Route path="/CommentForm">
-          <CommentForm  />
+          <CommentForm  setUser={setUser}/>
         </Route>
 
         <Route path="/Comments">
-          <Comments />
+          <Comments setUser={setUser}/>
         </Route>
-      </>
+      </Switch>
     </div>
   );
 }

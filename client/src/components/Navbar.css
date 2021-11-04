@@ -4,3 +4,7 @@ nav {
     justify-content: space-around;
     list-style-type: none;
 }
+
+.mobile_nav .nav_links {
+    display: none;
+}

@@ -18,8 +18,8 @@ const PostForm = (props) => {
   const postId = params.id
   
   useEffect(() => {
-    if(useParams.postId) {
-      getAllPosts(params.postId).then((post) => {
+    if(postId) {
+      getAllPosts(postId).then((post) => {
         setTitle(post.title);
         setDirector(post.director);
         setReleaseDate(post.releaseDate);
@@ -28,10 +28,9 @@ const PostForm = (props) => {
         setRating(post.rating);
       });
     }
-  }, [params.postId])
+  }, [postId])
 
   const handleSubmit = async (e) => {
-   
       e.preventDefault();
       const newPost = {
         title,
@@ -42,7 +41,7 @@ const PostForm = (props) => {
         genre,
       };
       if (postId) {
-        await updatePost()
+        await updatePost(postId)
       } else {
         await createPost(postId, newPost);
       }
