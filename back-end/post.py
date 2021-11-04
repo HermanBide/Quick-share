@@ -6,7 +6,7 @@ from user import User
 class Post(Model):
     title = CharField()
     director = CharField()
-    release_date = int()
+    release_date = IntegerField()
     review = CharField()
     genre = CharField()
     user = ForeignKeyField(User, backref='posts')

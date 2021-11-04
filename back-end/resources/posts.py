@@ -29,18 +29,23 @@ def get_post_id(id):
 @login_required
 def create_post():
     body = request.get_json()
-    post = Post.create(**body, user_id=current_user.id)
+    post = Post.create(**body, user=current_user.id)
     post_dict = model_to_dict(post, exclude=[User.password])
     return jsonify(post_dict), 201
 
 @post.route('/<int:id>', methods=['Put'])
 @login_required
 def update_post(id):
-    body = request.get_json()
-    if(Post.user != current_user.id):
-        return jsonify(message='Unauthorized!!!'), 401
-    (Post.update(**body).where(Post.id == id).execute())
-    return jsonify(model_to_dict(Post.get_by_id(id))), 200
+    try:
+        body = request.get_json()
+        post = Post.get_by_id(id)
+        if(post.id != current_user.id):
+            return jsonify(message='Unauthorized!!!'), 401
+        else:
+            (Post.update(**body).where(Post.id == id).execute())
+            return jsonify(model_to_dict(Post.get_by_id(id))), 200
+    except DoesNotExist:
+        return jsonify(error='Error updating post')
 
 @post.route('/<int:id>', methods=['DELETE'])
 @login_required
