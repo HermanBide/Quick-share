@@ -1,0 +1,9 @@
+input[type="radio"] {
+  display: none;
+}
+
+.review_form {
+  background-color: darkslateblue;
+  display: block;
+  align-items: center;
+}

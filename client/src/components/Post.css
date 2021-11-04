@@ -1,0 +1,28 @@
+/* .header{
+    width: 100%;
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: papayawhip;
+    font-size: 20px;
+    padding-bottom: 15px;
+    box-shadow: 0px 1px 2px black;
+    color: midnightblue;
+    z-index: 100;
+}
+
+.home_page {
+    min-height: 100vh;
+    background-color: navajowhite;
+    color: navy;
+    padding-top: 130px;
+}
+
+@media screen and (max-width: 400px) {
+    .header {
+        padding-top: 15px;
+        font-size: 10px;
+    }
+} */
