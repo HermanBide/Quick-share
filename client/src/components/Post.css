@@ -26,3 +26,29 @@
         font-size: 10px;
     }
 } */
+
+.post_page {
+    background-color: slategrey;
+    display: block;
+    align-items: center;
+    max-height: 100vh;
+    padding: 5px;
+}
+
+.post_card {
+    background-color: snow;
+    align-items: center;
+    max-width: 95vw;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.post_card h3 {
+    color: black;
+}
+
+.post_card h4{
+    color: gray;
+}

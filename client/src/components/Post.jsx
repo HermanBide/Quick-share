@@ -28,16 +28,16 @@ const Post = (props) => {
 
   <div className="post_page">
           {posts.map((post) => (
-        <div>
-          <h3>{post.title}</h3>
-          <h4>{post.releaseDate}</h4>
-          <h4>{post.director}</h4>
-          <h4>{post.review}</h4>
-          <h4>{post.rating}</h4>
-          <h4>{post.genre}</h4>
+        <div className='post_card'>
+          <h3>Movie Title: {post.title}</h3>
+          <h4>Release date: {post.releaseDate}</h4>
+          <h4>Director: {post.director}</h4>
+          <h4>Review: {post.review}</h4>
+          <h4>Rating: {post.rating}</h4>
+          <h4>Genre: {post.genre}</h4>
           <button onClick={() => handleClick(post.id)}>⭐️</button>
-          <button onClick={updatePost}>edit</button>
-          <button onClick={deletePost}>delete</button>
+          <button onClick={() => updatePost(post.id)}>edit</button>
+          <button onClick={() => deletePost(post.id)}>delete</button>
         </div>
       ))}
   </div>
