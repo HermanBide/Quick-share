@@ -3,26 +3,26 @@ import StarIcon from "@mui/icons-material/Star";
 import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useParams } from "react-router";
-import { createPost, getAllPosts, updatePost } from "../../services";
+import { createPost, getPostById, updatePost } from "../../services";
 import "./PostForm.css";
 
 const PostForm = (props) => {
   const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");
-  const [releaseDate, setReleaseDate] = useState();
+  const [releaseDate, setReleaseDate] = useState(null);
   const [review, setReview] = useState("");
   const [genre, setGenre] = useState("");
-  const [rating, setRating] = useState(null);
+  const [rating, setRating] = useState(0);
   const history = useHistory();
   const params = useParams()
   const postId = params.id
   
   useEffect(() => {
     if(postId) {
-      getAllPosts(postId).then((post) => {
+      getPostById(postId).then((post) => {
         setTitle(post.title);
         setDirector(post.director);
-        setReleaseDate(post.releaseDate);
+        setReleaseDate(post.release_date);
         setReview(post.review);
         setGenre(post.genre);
         setRating(post.rating);
@@ -35,7 +35,7 @@ const PostForm = (props) => {
       const newPost = {
         title,
         director,
-        releaseDate,
+        release_date: releaseDate,
         review,
         rating,
         genre,
@@ -44,8 +44,8 @@ const PostForm = (props) => {
         await updatePost(postId, newPost)
       } else {
         await createPost(newPost);
-        history.push("/Post");
       }
+      history.push("/Post");
   };
   return (
     <div className="review_body">
@@ -62,10 +62,10 @@ const PostForm = (props) => {
         <label>Release date</label>
         <input
           type="number"
-          min={2000}
+          min={1970}
           max={2021}
           value={releaseDate}
-          onChange={(e) => setReleaseDate(e.target.valueAsNumber)}
+          onChange={(e) => setReleaseDate(e.target.valueAsNumber || 0)}
           required
         />
 
@@ -154,8 +154,8 @@ const PostForm = (props) => {
           value={rating}
           onChange={(e) => setRating(e.target.valueAsNumber)}
         />
-        <button>submit</button>
         </div>
+        <button>submit</button>
       </form>
       {/* <Link to="/postForm">review a movie</Link> */}
     </div>

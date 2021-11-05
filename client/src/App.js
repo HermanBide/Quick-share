@@ -34,11 +34,11 @@ function App() {
        {/*REGISTRATION & LOGIN */}
 
       {/*FORMS */}
-        <Route path="/PostForm">
+        <Route exact path="/PostForm">
           <PostForm setUser={setUser}/>
         </Route>
 
-        <Route path="/edit-PostForm/:id">
+        <Route path="/PostForm/:id">
           <PostForm setUser={setUser}/>
         </Route>
 

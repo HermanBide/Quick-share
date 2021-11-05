@@ -82,6 +82,15 @@ export const getAllPosts = async () => {
   }
 }
 
+export const getPostById = async (id) => {
+  try {
+    const response = await axios.get(`${apiURL}/posts/${id}`);
+    return response.data
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
 // called createCartoon or some name like that it should take in info on a new cartoon and use it for the data on a axios.post request to our POST /cartoons/ endpoint
 export const createPost = async (newPost) => {
   try {
