@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom'
 import { getAllPosts } from "../services";
 import { updatePost } from "../services";
 import { deletePost } from "../services";
@@ -8,6 +9,7 @@ import "./Post.css";
 
 const Post = (props) => {
   const [posts, setPosts] = useState([]);
+
 
   useEffect(() => {
     getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
@@ -21,6 +23,7 @@ const Post = (props) => {
     const user = await addFavorite(postId);
     props.setUser(user);
   }
+
 
 
   return (

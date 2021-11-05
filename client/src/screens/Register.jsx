@@ -19,7 +19,7 @@ const Register = (props) => {
     };
     const user = await register(newUser);
     props.setUser(user);
-    history.push("/PostForm");
+    history.push("/");
   };
   return (
     <section className="signup-section">

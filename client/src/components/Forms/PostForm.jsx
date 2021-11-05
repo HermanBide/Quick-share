@@ -41,15 +41,16 @@ const PostForm = (props) => {
         genre,
       };
       if (postId) {
-        await updatePost(postId)
+        await updatePost(postId, newPost)
       } else {
-        await createPost(postId, newPost);
+        await createPost(newPost);
+        history.push("/Post");
       }
-      history.push("/Post");
   };
   return (
     <div className="review_body">
       <form className="review_form" onSubmit={handleSubmit}>
+      <div>
         <label>Movie Title</label>
         <input
           type="text"
@@ -154,6 +155,7 @@ const PostForm = (props) => {
           onChange={(e) => setRating(e.target.valueAsNumber)}
         />
         <button>submit</button>
+        </div>
       </form>
       {/* <Link to="/postForm">review a movie</Link> */}
     </div>

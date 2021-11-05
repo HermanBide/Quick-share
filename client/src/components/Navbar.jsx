@@ -4,7 +4,6 @@ import { logout } from "../services";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
-import Movie from './Movie';
 import './Navbar.css'
 
 const Navbar = (props) => {
@@ -13,7 +12,6 @@ const Navbar = (props) => {
         await logout();
         props.setUser(null)
       };
-
     return (
         <div className='nav'>
         {props.user ? (
@@ -40,7 +38,6 @@ const Navbar = (props) => {
                   </li>
                 </ul>
               </div>
-  
               <div className="navbar-two">
                 <header className="home-header">
                   <button id="logout-btn" onClick={handleClick}>
@@ -63,7 +60,6 @@ const Navbar = (props) => {
                 </ul>
               </div>
             </header>
-  
           </>
         ) : (
           <>
