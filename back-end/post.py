@@ -8,6 +8,7 @@ class Post(Model):
     director = CharField()
     release_date = IntegerField()
     review = CharField()
+    rating = IntegerField()
     genre = CharField()
     user = ForeignKeyField(User, backref='posts')
     
