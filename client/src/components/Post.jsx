@@ -28,21 +28,21 @@ const Post = (props) => {
       {posts.map((post) => (
         <div className="post_card">
           <div className="titles">
-            <h3>Movie Title</h3>
-            <h4>Release date</h4>
-            <h4>Director</h4>
-            <h4>Review</h4>
-            <h4>Rating</h4>
-            <h4>Genre</h4>
+            <div>Movie Title</div>
+            <div>Release date</div>
+            <div>Director</div>
+            <div>Review</div>
+            <div>Rating</div>
+            <div>Genre</div>
           </div>
 
           <div className="post_info">
-            <h3>{post.title}</h3>
-            <h4>{post.releaseDate}</h4>
-            <h4>{post.director}</h4>
-            <h4>{post.review}</h4>
-            <h4>{post.rating}</h4>
-            <h4>{post.genre}</h4>
+            <div><h3>{post.title}</h3></div>
+            <div><h4>{post.releaseDate}</h4></div>
+            <div><h4>{post.director}</h4></div>
+            <div><h4>{post.review}</h4></div>
+            <div><h4>{post.rating}</h4></div>
+            <div> <h4>{post.genre}</h4></div>
           </div>
           <button onClick={() => handleClick(post.id)}>⭐️</button>
           <Link to={`/postForm/${post.id}`}>

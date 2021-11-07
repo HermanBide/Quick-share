@@ -42,6 +42,11 @@ const Navbar = (props) => {
                       favorites
                     </Link>
                   </li>
+                  <li>
+                    <Link to="/Post" className="navItem">
+                      Posts
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="navbar-two">

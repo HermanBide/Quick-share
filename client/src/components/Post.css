@@ -52,3 +52,34 @@
 .post_card h4{
     color: gray;
 }
+
+.titles {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6% ;
+    justify-content: center;
+}
+
+.titles div {
+    padding: 30px;
+}
+
+.post_info {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6% ;
+    justify-content: center;
+   
+}
+
+.post_info div {
+    padding: 30px;
+    /* background-color: gainsboro; */
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 2px;
+  
+ 
+}
