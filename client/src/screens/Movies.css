@@ -1,5 +1,25 @@
-.movie_body {
-    background-color: #f2f2f2;
-    min-height: 100vh;
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.idownloadblog.com%2F2016%2F03%2F25%2Ftvos-9-2-sorting-options-movies-tv-shows%2F&psig=AOvVaw0N0VdVamlTTCdFv2hebTuw&ust=1636168400090000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMjwwruggPQCFQAAAAAdAAAAABAJ");
+
+
+.movie_container {
+    overflow-x: auto;
+    flex-wrap:  nowrap;
+    background-color: #ffffff;
+    height: 100vh;
+
+    color: #ffffff;
+    padding: 15px;
+}
+
+.movie_card {
+    background: lightslategray;
+    margin: 10px;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.movie_header{
+ background: blue;
+ display: flex;
+ justify-content: center
 }

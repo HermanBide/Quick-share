@@ -4,6 +4,7 @@ import { logout } from "../services";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import './Navbar.css'
 
 const Navbar = (props) => {
@@ -36,6 +37,11 @@ const Navbar = (props) => {
                       Post a review
                     </Link>
                   </li>
+                  <li>
+                    <Link to="/Favorites" className="navItem">
+                      favorites
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="navbar-two">
@@ -55,6 +61,9 @@ const Navbar = (props) => {
                     </Link>
                     <Link to="/Movie" className="navItem">
                       <LocalMoviesIcon className="icon" />
+                    </Link>
+                    <Link to="/Favorites" className="navItem">
+                      <FavoriteIcon className="icon" />
                     </Link>
                   </li>
                 </ul>

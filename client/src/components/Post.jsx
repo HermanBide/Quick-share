@@ -24,10 +24,7 @@ const Post = (props) => {
     props.setUser(user);
   }
 
-
-
   return (
-
   <div className="post_page">
           {posts.map((post) => (
         <div className='post_card'>
@@ -43,6 +40,57 @@ const Post = (props) => {
         </div>
       ))}
   </div>
+  // <div className="post_body">
+  //   <div className="wrapper">
+  //     <div className="table" >
+
+  //       <div className="row header">
+  //           <div className="cell">
+  //             Movie
+  //           </div>
+  //           <div className="cell">
+  //             Release Date
+  //           </div>
+  //           <div className="cell">
+  //             Director
+  //           </div>
+  //           <div className="cell">
+  //             Genre
+  //           </div>
+  //           <div className="cell">
+  //             Review
+  //           </div>
+  //           <div className="cell">
+  //             Rating
+  //           </div>
+  //       </div>
+
+  //       {posts.map((post) => (
+  //       <div className="row">
+  //           <div className="cell" data-title="Movie">
+  //           {post.title}
+  //           </div>
+  //           <div className="cell" data-title="Release Date">
+  //           {post.releaseDate}
+  //           </div>
+  //           <div className="cell" data-title="Director">
+  //           {post.director}
+  //           </div>
+  //           <div className="cell" data-title="Genre">
+  //           {post.genre}
+  //           </div>
+  //           <div className="cell" data-title="Review">
+  //           {post.review}
+  //           </div>
+  //           <div className="cell" data-title="Rating">
+  //             {post.rating}
+  //           </div>
+  //       </div>
+  //       ))}
+  //     </div>
+  //   </div>
+  // </div>
+
   )
 };
 
