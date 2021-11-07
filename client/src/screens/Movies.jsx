@@ -6,14 +6,31 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
-import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
-import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import "./Movies.css";
 import MoviePage from "./MoviePage";
 
 // import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 
 const Movies = (props) => {
+  const [count, setCount] = useState(0);
+  const [num, setNum] = useState(0);
+  const [searchValue, setSearchValue] = useState("");
+
+  const like = () => {
+    setCount(count + 1);
+  };
+
+  const dislike = () => {
+    setNum( num - 1);
+  };
+
+  // const eventlistener = async (e) => {
+  //   e.preventDefault();
+  //   like()
+  // }
+
   const [movies, setMovies] = useState([
     {
       Title: "Avengers: Infinity War",
@@ -106,13 +123,9 @@ const Movies = (props) => {
   return (
     <div className="movie_container">
       <header className="movie_header">
-          <h2>Movies</h2>
+        <h2>Movies</h2>
         <form className="search_bar">
-          <input
-            type="text"
-            id="search"
-            placeholder="movie name?"
-          />
+          <input type="text" id="search" placeholder="movie name?" />
           <button>search</button>
         </form>
       </header>
@@ -127,13 +140,19 @@ const Movies = (props) => {
               image={movie.Poster}
             />
             {/* <Typography gutterBottom variant="h6" component="div"> */}
-              <h4>{movie.Title}</h4>
-              <h5>Release year: {movie.Year}</h5>
+            <h4>{movie.Title}</h4>
+            <h5>Release year: {movie.Year}</h5>
             {/* </Typography> */}
-            {/* <CardActions> */}
-              <Button size="small"><ThumbUpAltIcon /></Button>
-              <Button size="small"><ThumbDownIcon /></Button>
-            {/* </CardActions> */}
+            <CardActions>
+            <Button size="small" onClick={like}>
+              <ThumbUpAltIcon />
+              {count}
+            </Button>
+            <Button size="small" onClick={dislike}>
+              <ThumbDownIcon />
+              {count}
+            </Button>
+            </CardActions>
           </Card>
         ))}
       </div>
