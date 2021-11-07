@@ -23,3 +23,12 @@
  display: flex;
  justify-content: center
 }
+
+h5 {
+    color: rgb(99, 105, 112);
+}
+.movie_poster {
+    display: flex;
+    grid-template-columns: 120px 120px 120px;
+    margin:auto 0;
+}

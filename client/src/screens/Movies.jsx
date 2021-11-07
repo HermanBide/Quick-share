@@ -117,7 +117,7 @@ const Movies = (props) => {
         </form>
       </header>
 
-      <div>
+      <div className="movie_poster">
         {movies.map((movie) => (
           <Card sx={{ maxWidth: 300 }}>
             <CardMedia
