@@ -33,7 +33,7 @@ def create_post():
     post_dict = model_to_dict(post, exclude=[User.password])
     return jsonify(post_dict), 201
 
-@post.route('/<int:id>', methods=['Put'])
+@post.route('/<int:id>', methods=['PUT'])
 @login_required
 def update_post(id):
     try:
