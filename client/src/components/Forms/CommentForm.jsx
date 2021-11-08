@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const CommentForm = (props) => {
     const [comment, setComment] = useState("");

@@ -1,7 +1,6 @@
 import React from "react";
-import StarIcon from "@mui/icons-material/Star";
 import { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useParams } from "react-router";
 import { createPost, getPostById, updatePost } from "../../services";
 import "./PostForm.css";

@@ -110,7 +110,8 @@ const Movies = (props) => {
   )
 
   return (
-    <div className="movie_container">
+    <div>
+
       <header className="movie_header">
         <h2>Movies</h2>
         {/* <form className="search_bar" onSubmit={handleChange}>
@@ -118,11 +119,12 @@ const Movies = (props) => {
           <button onChange={(e) => setSearchValue(e.target.value)}>search</button>
         </form> */}
       </header>
-
+    <div className="movie_container">
+        {movies.map((movie) => {  
+          return (
+      <Link  exact to={`/MoviePage/${movie.Poster}`}>
       <div className="movie_poster">
-        {movies.map((movie) => (        
-      <Link to={`/MoviePage/${movie.Poster}`}>
-          <Card sx={{ maxWidth: 300 }}>
+          <Card className="poster" sx={{ maxWidth: 300 }}>
             <CardMedia
               component="img"
               alt="green iguana"
@@ -134,9 +136,11 @@ const Movies = (props) => {
             <CardActions>
             </CardActions>
           </Card>
-      </Link>
-        ))}
       </div>
+      </Link>
+          )      
+        })}
+    </div>
     </div>
   );
 };

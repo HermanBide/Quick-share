@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllPosts } from "../services";
-import { updatePost } from "../services";
+// import { updatePost } from "../services";
 import { deletePost } from "../services";
 import { addFavorite } from "../services";
 import FavoriteIcon from '@mui/icons-material/Favorite';
