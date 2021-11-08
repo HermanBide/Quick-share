@@ -53,9 +53,8 @@ const PostForm = (props) => {
       <div className="form-box">
         <form className="form-form" onSubmit={handleSubmit}>
         <h4>Write a review on a movie</h4>
-          <div>
-            <label>Movie Title</label>
-            <br />
+
+            <br /> 
             <input
               className="form-control"
               autoComplete="off"
@@ -68,7 +67,6 @@ const PostForm = (props) => {
               placeholder="Movie title"
             />
 
-            <label>Release date</label>
             <br />
             <input
             autoComplete="off"
@@ -84,7 +82,6 @@ const PostForm = (props) => {
               placeholder="Release year"
             />
 
-            <label>Director</label>
             <br />
             <input
               className="form-control"
@@ -98,7 +95,7 @@ const PostForm = (props) => {
               placeholder="who directed this movie ?"
             />
 
-            <label>Review</label>
+
             <br />
             <textarea
               type="message"
@@ -111,7 +108,6 @@ const PostForm = (props) => {
                     placeholder="write your review"
             />
 
-            <label htmlFor="genre">Genre:</label>
             <br />
             <input
               className="form-control"
@@ -123,7 +119,7 @@ const PostForm = (props) => {
               onChange={(e) => setGenre(e.target.value)}
               required
               placeholder="genre"
-            />
+            /> <br/>
           
             {/* <div>
           {[...Array(5)].map((star, i) => {
@@ -158,8 +154,7 @@ const PostForm = (props) => {
               value={rating}
               onChange={(e) => setRating(e.target.valueAsNumber)}
             />
-          </div>
-          <button type="submit" className="button">
+          <button type="submit" className="form_button">
             submit
           </button>
         </form>

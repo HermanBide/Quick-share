@@ -44,7 +44,7 @@
   outline: none;
 }
 
-.button {
+.form_button {
   border: 0;
   padding: 10px 30px;
   background: #86b0b6;
@@ -53,15 +53,15 @@
   color: #e5e5e5;
 }
 
-.button:hover {
+.form_button:hover {
   border-color: #e5e5e5;
   color: #e5e5e5;
   background: #01497c;
 }
 
 .form-box textarea {
-  width: 495px;
-  height: 150px;
+  width: 300px;
+  height: 250px;
   /* padding: 15px 20px; */
   margin-bottom: 10px;
   border-radius:  5px;
@@ -75,13 +75,13 @@
 
 .form-form {
   background: #ffffff;
-  width: 510px;
+  width: 525px;
   height: 625px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.9);
 }
 
