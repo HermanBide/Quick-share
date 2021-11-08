@@ -14,11 +14,11 @@ const PostForm = (props) => {
   const [genre, setGenre] = useState("");
   const [rating, setRating] = useState(0);
   const history = useHistory();
-  const params = useParams()
-  const postId = params.id
-  
+  const params = useParams();
+  const postId = params.id;
+
   useEffect(() => {
-    if(postId) {
+    if (postId) {
       getPostById(postId).then((post) => {
         setTitle(post.title);
         setDirector(post.director);
@@ -28,104 +28,107 @@ const PostForm = (props) => {
         setRating(post.rating);
       });
     }
-  }, [postId])
+  }, [postId]);
 
   const handleSubmit = async (e) => {
-      e.preventDefault();
-      const newPost = {
-        title,
-        director,
-        release_date: releaseDate,
-        review,
-        rating,
-        genre,
-      };
-      if (postId) {
-        await updatePost(postId, newPost)
-      } else {
-        await createPost(newPost);
-      }
-      history.push("/Post");
+    e.preventDefault();
+    const newPost = {
+      title,
+      director,
+      release_date: releaseDate,
+      review,
+      rating,
+      genre,
+    };
+    if (postId) {
+      await updatePost(postId, newPost);
+    } else {
+      await createPost(newPost);
+    }
+    history.push("/Post");
   };
   return (
     <div className="review_body">
-      <form className="review_form" onSubmit={handleSubmit}>
-      <div>
-        <label>Movie Title</label>
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
 
-        <label>Release date</label>
-        <input
-          type="number"
-          min={1970}
-          max={2021}
-          value={releaseDate}
-          onChange={(e) => setReleaseDate(e.target.valueAsNumber || 0)}
-          required
-        />
+      <div className="form-box">
+        <form className="form-form" onSubmit={handleSubmit}>
+        <h4>Write a review on a movie</h4>
+          <div>
+            <label>Movie Title</label>
+            <br />
+            <input
+              className="form-control"
+              autoComplete="off"
+              id="title"
+              tabIndex="1"
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+              placeholder="Movie title"
+            />
 
-        <label>Director</label>
-        <input
-          type="text"
-          value={director}
-          onChange={(e) => setDirector(e.target.value)}
-          required
-        />
+            <label>Release date</label>
+            <br />
+            <input
+            autoComplete="off"
+              id="date"
+              tabIndex="1"
+              className="form-control"
+              type="number"
+              min={1970}
+              max={2021}
+              value={releaseDate}
+              onChange={(e) => setReleaseDate(e.target.valueAsNumber || 0)}
+              required
+              placeholder="Release year"
+            />
 
-        <label>Review</label>
-        <textarea
-          type="text"
-          value={review}
-          onChange={(e) => setReview(e.target.value)}
-          required
-        />
+            <label>Director</label>
+            <br />
+            <input
+              className="form-control"
+              autoComplete="off"
+              id="director"
+              tabIndex="1"
+              type="text"
+              value={director}
+              onChange={(e) => setDirector(e.target.value)}
+              required
+              placeholder="who directed this movie ?"
+            />
 
-        <label htmlFor="genre">Genre:</label>
-        <input
-          id="genre"
-          type="text"
-          value={genre}
-          onChange={(e) => setGenre(e.target.value)}
-          required
-        />
-        {/* <label>Genre</label>
-        <select >
-          <option>Action</option>
-          <option>Adventure</option>
-          <option>Animation</option>
-          <option>Comedy</option>
-          <option>Crime</option>
-          <option>Documentary</option>
-          <option>Drama</option>
-          <option>Eastern</option>
-          <option>Erotic</option>
-          <option>Family</option>
-          <option>Fantasy</option>
-          <option>Foriegn</option>
-          <option>History</option>
-          <option>Holiday</option>
-          <option>Horror</option>
-          <option>Musical</option>
-          <option>Mystery</option>
-          <option>Romance</option>
-          <option>Science Fiction</option>
-          <option>Sport</option>
-          <option>Suspence</option>
-          <option>Tv Movie</option>
-          <option>Thriller</option>
-          <option>War</option>
-          <option>Western</option>
-        </select> */}
+            <label>Review</label>
+            <br />
+            <textarea
+              type="message"
+              value={review}
+              onChange={(e) => setReview(e.target.value)}
+              required
+              tabIndex="3"
+                    cols="40"
+                    rows="10"
+                    placeholder="write your review"
+            />
 
-        {/* <div>
+            <label htmlFor="genre">Genre:</label>
+            <br />
+            <input
+              className="form-control"
+              autoComplete="off"
+              tabIndex="1"
+              id="genre"
+              type="text"
+              value={genre}
+              onChange={(e) => setGenre(e.target.value)}
+              required
+              placeholder="genre"
+            />
+          
+            {/* <div>
           {[...Array(5)].map((star, i) => {
             const ratingValue = i + 1;
-            return (
+            return (    id="title"
               <label>
                 <input
                   type="radio"
@@ -143,20 +146,24 @@ const PostForm = (props) => {
           })}
         </div> */}
 
-        <label htmlFor="rating">rating: {rating}/5</label>
-        <input
-          type="range"
-          id="rating"
-          required
-          step={1}
-          min={1}
-          max={5}
-          value={rating}
-          onChange={(e) => setRating(e.target.valueAsNumber)}
-        />
-        </div>
-        <button>submit</button>
-      </form>
+            <label htmlFor="rating">rating: {rating}/5</label>
+            <br />
+            <input
+              type="range"
+              id="rating"
+              required
+              step={1}
+              min={1}
+              max={5}
+              value={rating}
+              onChange={(e) => setRating(e.target.valueAsNumber)}
+            />
+          </div>
+          <button type="submit" className="button">
+            submit
+          </button>
+        </form>
+      </div>
       {/* <Link to="/postForm">review a movie</Link> */}
     </div>
   );

@@ -1,25 +1,15 @@
 import React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
 import "./Movies.css";
 import MoviePage from "./MoviePage";
 
-// import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
-
 const Movies = (props) => {
   const [searchValue, setSearchValue] = useState("");
-
-
-  // const eventlistener = async (e) => {
-  //   e.preventDefault();
-  //   like()
-  // }
+  const [ toggleFetch, setToggleFetch ] = useState(false)
 
   const [movies, setMovies] = useState([
     {
@@ -108,7 +98,7 @@ const Movies = (props) => {
     } catch (error) {
       console.error("movies not found!");
     }
-  }, []);
+  }, [toggleFetch]);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -123,21 +113,15 @@ const Movies = (props) => {
     <div className="movie_container">
       <header className="movie_header">
         <h2>Movies</h2>
-        <form className="search_bar" onSubmit={handleChange}>
+        {/* <form className="search_bar" onSubmit={handleChange}>
           <input type="text" id="search" placeholder="movie name?" className="movie_input" />
           <button onChange={(e) => setSearchValue(e.target.value)}>search</button>
-        </form>
+        </form> */}
       </header>
-
-      {/* {filteredMovies.map(movie => {
-        return (
-          <
-        )
-      })} */}
 
       <div className="movie_poster">
         {movies.map((movie) => (        
-      <Link to={`/Moviepage/${movie.Poster}`}>
+      <Link to={`/MoviePage/${movie.Poster}`}>
           <Card sx={{ maxWidth: 300 }}>
             <CardMedia
               component="img"
@@ -145,10 +129,8 @@ const Movies = (props) => {
               height="300"
               image={movie.Poster}
             />
-            {/* <Typography gutterBottom variant="h6" component="div"> */}
             <h4>{movie.Title}</h4>
             <h5>Release year: {movie.Year}</h5>
-            {/* </Typography> */}
             <CardActions>
             </CardActions>
           </Card>

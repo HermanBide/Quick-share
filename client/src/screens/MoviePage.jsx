@@ -1,5 +1,6 @@
 import React from "react";
 import "./MoviePage.css";
+import { Link } from 'react-router-dom'
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -38,6 +39,8 @@ const MoviePage = (props) => {
   return (
     <>
       <div>
+        <Link to="/">home</Link>
+
         <Card sx={{ maxWidth: 300 }}>
           <CardMedia
             component="img"
@@ -59,17 +62,6 @@ const MoviePage = (props) => {
           </CardActions>
         </Card>
       </div>
-      {/* {props.movies.map((movie, index) => (
-        <div className="image_container d-flex justify-content-start m-3">
-          <img src={movie.Poster} alt="movie"></img>
-          <div
-            onClick={() => props.handleFavouritesClick(movie)}
-            className="overlay d-flex align-items-center justify-content-center"
-          >
-            <FavouriteComponent />
-          </div>
-        </div>
-      ))} */}
     </>
   );
 };
