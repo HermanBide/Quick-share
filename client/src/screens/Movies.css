@@ -10,7 +10,24 @@
     margin: 10px;
     padding: 15px;
     display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 1fr;
+    justify-items: center;
+
 }
+
+/* .movie_container {
+    overflow-x: auto;
+    flex-wrap:  nowrap;
+    background-color: #ffffff;
+    height: 100vh;
+    transform: transform 0.2s;
+    color: #ffffff;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+} */
 .movie_poster {
     margin: 8px;
 }
@@ -25,6 +42,9 @@
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 1fr;
 }
 
 .movie_header{
@@ -45,3 +65,5 @@ h5 {
     justify-content: space-between;
     box-shadow: none;
 }
+
+

@@ -213,20 +213,19 @@
 
   @media screen and (max-width: 550px) {
 
-      .icon{
-        /* color: #52b788; */
+      /* .icon{
         color: #4895ef;
         transition: all 0.3s ease 0s
       }
     
       .icon:hover{
         color: #fb8500;
-      }
+      } */
     
   .navbar {
     padding: 0;
     display: flex;
-    height: 70px;
+    height: 100px;
     justify-content: space-evenly;
   }
 

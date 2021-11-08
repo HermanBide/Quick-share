@@ -123,8 +123,8 @@ const Movies = (props) => {
         {movies.map((movie) => {  
           return (
       <Link  exact to={`/MoviePage/${movie.Poster}`}>
-      <div className="movie_poster">
-          <Card className="poster" sx={{ maxWidth: 300 }}>
+      {/* <div className="movie_poster"> */}
+          <Card className="poster"  sx={{ maxWidth: 300 }}>
             <CardMedia
               component="img"
               alt="green iguana"
@@ -136,7 +136,7 @@ const Movies = (props) => {
             <CardActions>
             </CardActions>
           </Card>
-      </div>
+      {/* </div> */}
       </Link>
           )      
         })}
