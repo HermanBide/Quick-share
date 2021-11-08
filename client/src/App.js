@@ -56,7 +56,7 @@ function App(props) {
       {/*FORMS */}
 
         <Route path="/Post">
-          <Post user={user}/>
+          <Post user={user} />
         </Route>
 
         <Route path="/Comments">

@@ -1,7 +1,7 @@
 import Favorite from "@mui/icons-material/Favorite";
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { getAllPosts } from "../services";
 // import { updatePost } from "../services";
 import { deletePost } from "../services";
@@ -12,6 +12,7 @@ import "./Post.css";
 const Post = (props) => {
   const [posts, setPosts] = useState([]);
   const [ favorite, setFavorite ] = useState([])
+  const history = useHistory();
 
   useEffect(() => {
     getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
@@ -57,7 +58,7 @@ const Post = (props) => {
           <Link to={`/postForm/${post.id}`}>
             <button>edit</button>
           </Link>
-          <button onClick={() => deletePost(post.id)}>delete</button>
+          <button onClick={() => {deletePost(post.id); history.push("/")}}>delete</button>
           <button className="icon"  type='submit' onClick={handleClick}><FavoriteIcon /></button>
         </div>
       ))}
