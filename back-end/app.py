@@ -49,13 +49,9 @@ origins=['http://localhost:3000']
 
 if 'DATABASE_URL' in os.environ:
     initialize([Post, User, Favorite,Comment])
-    # configure cookie to only work on secure connections (HTTPS)
     app.config['SESSION_COOKIE_SECURE'] = True
-    # configure cookie to NOT work on unsecure connections (HTTP)
     app.config['SESSION_COOKIE_HTTPONLY'] = False
-    # allowing the cookie to come from a different site
     app.config['SESSION_COOKIE_SAMESITE'] = 'None'
-    # fetching the client url from an environment variable
     origins.append(os.environ.get('CLIENT_URL'))
 
 CORS(app, origins=origins, supports_credentials=True)
