@@ -6,25 +6,15 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
-import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import { Link } from 'react-router-dom'
 import "./Movies.css";
 import MoviePage from "./MoviePage";
 
 // import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 
 const Movies = (props) => {
-  const [count, setCount] = useState(0);
-  const [num, setNum] = useState(0);
   const [searchValue, setSearchValue] = useState("");
 
-  const like = () => {
-    setCount(count + 1);
-  };
-
-  const dislike = () => {
-    setNum( num - 1);
-  };
 
   // const eventlistener = async (e) => {
   //   e.preventDefault();
@@ -120,18 +110,36 @@ const Movies = (props) => {
     }
   }, []);
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchValue(e.target.value)
+  }
+
+  const filteredMovies = movies.filter(movie => 
+    movie.Title.toLowerCase().includes(searchValue.toLowerCase())
+  )
+
   return (
     <div className="movie_container">
       <header className="movie_header">
         <h2>Movies</h2>
-        <form className="search_bar">
-          <input type="text" id="search" placeholder="movie name?" />
-          <button>search</button>
+        <form className="search_bar" onSubmit={handleChange}>
+          <input type="text" id="search" placeholder="movie name?" className="movie_input" />
+          <button onChange={(e) => setSearchValue(e.target.value)}>search</button>
         </form>
       </header>
 
+      {/* {filteredMovies.map(movie => {
+        return (
+          <
+        )
+      })} */}
+
+      <Link to="/Moviepage">
       <div className="movie_poster">
         {movies.map((movie) => (
+
+         
           <Card sx={{ maxWidth: 300 }}>
             <CardMedia
               component="img"
@@ -144,18 +152,11 @@ const Movies = (props) => {
             <h5>Release year: {movie.Year}</h5>
             {/* </Typography> */}
             <CardActions>
-            <Button size="small" onClick={like}>
-              <ThumbUpAltIcon />
-              {count}
-            </Button>
-            <Button size="small" onClick={dislike}>
-              <ThumbDownIcon />
-              {count}
-            </Button>
             </CardActions>
           </Card>
         ))}
       </div>
+      </Link>
     </div>
   );
 };

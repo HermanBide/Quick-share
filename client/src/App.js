@@ -36,8 +36,8 @@ function App() {
   //   fetchMovies();
   // }, [])
 
-  return (
 
+  return (
     <div className="App">
      <Navbar user={user} setUser={setUser} />
 

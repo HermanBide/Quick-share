@@ -47,10 +47,13 @@
 
 .post_card h3 {
     color: black;
+    font-size: 16px;
+    
 }
 
 .post_card h4{
-    color: gray;
+    color: rgb(71, 71, 71);
+    font-size: 14px;
 }
 
 .titles {
@@ -76,7 +79,7 @@
 
 .post_info div {
     padding: 30px;
-    /* background-color: gainsboro; */
+    background-color: gainsboro;
     border: 1px solid lightgray;
     border-radius: 10px;
     margin: 2px;

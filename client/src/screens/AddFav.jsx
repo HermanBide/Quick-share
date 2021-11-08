@@ -1,12 +1,12 @@
 import React from 'react'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-function Favorites(props) {
+function AddFav() {
     return (
         <div>
-            <span>Favorites</span>
+            <FavoriteIcon />
         </div>
     )
 }
 
-export default Favorites
+export default AddFav

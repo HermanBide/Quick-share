@@ -1,3 +1,4 @@
+import Favorite from "@mui/icons-material/Favorite";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -5,10 +6,12 @@ import { getAllPosts } from "../services";
 import { updatePost } from "../services";
 import { deletePost } from "../services";
 import { addFavorite } from "../services";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import "./Post.css";
 
 const Post = (props) => {
   const [posts, setPosts] = useState([]);
+  const [ favorite, setFavorite ] = useState([])
 
   useEffect(() => {
     getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
@@ -22,6 +25,12 @@ const Post = (props) => {
     const user = await addFavorite(postId);
     props.setUser(user);
   };
+
+  const addFavoriteMovie = (movie) => {
+    const newFavorite = [...favorite, movie]
+    setFavorite(newFavorite)
+  }
+
 
   return (
     <div className="post_page">
@@ -38,7 +47,7 @@ const Post = (props) => {
 
           <div className="post_info">
             <div><h3>{post.title}</h3></div>
-            <div><h4>{post.releaseDate}</h4></div>
+            <div><h4>{post.release_date}</h4></div>
             <div><h4>{post.director}</h4></div>
             <div><h4>{post.review}</h4></div>
             <div><h4>{post.rating}</h4></div>
@@ -49,6 +58,7 @@ const Post = (props) => {
             <button>edit</button>
           </Link>
           <button onClick={() => deletePost(post.id)}>delete</button>
+          <button className="icon"  type='submit' onClick={handleClick}><FavoriteIcon /></button>
         </div>
       ))}
     </div>
