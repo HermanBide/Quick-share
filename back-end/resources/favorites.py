@@ -6,7 +6,7 @@ from flask_login import current_user, login_required
 from favorite import Favorite
 from user import User
 
-favorite=Blueprint('post', __name__, url_prefix="/posts")
+favorite=Blueprint('favorite', __name__, url_prefix="/favorites")
 
 @favorite.route('/', methods=['GET'])
 def get_all_favorites():
@@ -20,9 +20,9 @@ def get_all_favorites():
 @login_required
 def create_favorite():
     body = request.get_json()
-    post = favorite.create(**body, user=current_user.id)
-    post_dict = model_to_dict(post, exclude=[User.password])
-    return jsonify(post_dict), 201
+    favorite = Favorite.create(**body, user=current_user.id)
+    favorite_dict = model_to_dict(favorite, exclude=[User.password])
+    return jsonify(favorite_dict), 201
 
 @favorite.route('/<int:id>', methods=['DELETE'])
 @login_required
