@@ -5,6 +5,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import NoteIcon from '@mui/icons-material/Note';
 import './Navbar.css'
 
 const Navbar = (props) => {
@@ -29,7 +30,7 @@ const Navbar = (props) => {
                 <ul className="nav_links">
                   <li>
                     <Link to="/Post" className="navItem">
-                      <h3>Home </h3>
+                      <h3 color={'red'}>Home </h3>
                     </Link>
                   </li>
                   <li>
@@ -69,6 +70,9 @@ const Navbar = (props) => {
                     </Link>
                     <Link to="/Favorites" className="navItem">
                       <FavoriteIcon className="icon" />
+                    </Link>
+                    <Link to="/PostForm" className="navItem">
+                      <NoteIcon className="icon" />
                     </Link>
                   </li>
                 </ul>
