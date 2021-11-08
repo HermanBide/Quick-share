@@ -56,10 +56,10 @@
     justify-content: space-between;
     /* align-items: center; */
     padding: 30px 10px;
-    /* background-color: #4895ef; */
+    background-color: #023047;
     color: #f8f9fa;
     /* margin: 5px; */
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid black;
     height: 50px;
   }
 
