@@ -46,22 +46,22 @@ function App(props) {
           <PostForm setUser={setUser}/>
         </Route>
 
-        <Route path="/CommentForm">
+        {/* <Route path="/CommentForm">
           <CommentForm  setUser={setUser}/>
         </Route>
 
         <Route path="/CommentForm">
           <CommentForm  setUser={setUser}/>
-        </Route>
+        </Route> */}
       {/*FORMS */}
 
         <Route path="/Post">
           <Post user={user} />
         </Route>
-
+{/* 
         <Route path="/Comments">
           <Comments user={user}/>
-        </Route>
+        </Route> */}
 
         <Route path="/">
           <Movies user={user}/>

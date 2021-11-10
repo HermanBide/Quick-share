@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { logout } from "../services";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
-import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
+// import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import NoteIcon from '@mui/icons-material/Note';
 import './Navbar.css'
@@ -29,7 +30,7 @@ const Navbar = (props) => {
               <div className="navbar-one">
                 <ul className="nav_links">
                   <li>
-                    <Link to="/Post" className="navItem">
+                    <Link to="/Movies" className="navItem">
                       <h3 color={'red'}>Home </h3>
                     </Link>
                   </li>
@@ -62,17 +63,17 @@ const Navbar = (props) => {
               <div className="mobile_nav">
                 <ul className="nav_links">
                   <li>
-                    <Link to="/Post" className="navItem">
+                    <Link to="/Movies" className="navItem">
                       <HomeIcon className="icon" />
-                    </Link>
-                    <Link to="/Movie" className="navItem">
-                      <LocalMoviesIcon className="icon" />
                     </Link>
                     <Link to="/Favorites" className="navItem">
                       <FavoriteIcon className="icon" />
                     </Link>
                     <Link to="/PostForm" className="navItem">
                       <NoteIcon className="icon" />
+                    </Link>                    
+                    <Link to="/Post" className="navItem">
+                      <BorderColorIcon className="icon" />
                     </Link>
                   </li>
                 </ul>

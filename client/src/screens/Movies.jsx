@@ -82,32 +82,32 @@ const Movies = (props) => {
     },
   ]);
 
-  const searchMovie = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=the&apikey=fdfd3b22`;
-    const response = await fetch(url);
-    const responseJson = await response.json();
-    console.log(responseJson);
-    if (responseJson.Search) {
-      setMovies(responseJson.Search);
-    }
-  };
+  // const searchMovie = async (searchValue) => {
+  //   const url = `http://www.omdbapi.com/?s=the&apikey=fdfd3b22`;
+  //   const response = await fetch(url);
+  //   const responseJson = await response.json();
+  //   console.log(responseJson);
+  //   if (responseJson.Search) {
+  //     setMovies(responseJson.Search);
+  //   }
+  // };
 
-  useEffect(() => {
-    try {
-      searchMovie();
-    } catch (error) {
-      console.error("movies not found!");
-    }
-  }, [toggleFetch]);
+  // useEffect(() => {
+  //   try {
+  //     searchMovie();
+  //   } catch (error) {
+  //     console.error("movies not found!");
+  //   }
+  // }, [toggleFetch]);
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchValue(e.target.value)
-  }
+  // const handleChange = (e) => {
+  //   e.preventDefault();
+  //   setSearchValue(e.target.value)
+  // }
 
-  const filteredMovies = movies.filter(movie => 
-    movie.Title.toLowerCase().includes(searchValue.toLowerCase())
-  )
+  // const filteredMovies = movies.filter(movie => 
+  //   movie.Title.toLowerCase().includes(searchValue.toLowerCase())
+  // )
 
   return (
     <div>
