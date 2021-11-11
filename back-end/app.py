@@ -54,13 +54,11 @@ if 'DATABASE_URL' in os.environ:
     app.config['SESSION_COOKIE_SAMESITE'] = 'None'
     origins.append(os.environ.get('CLIENT_URL'))
 
-CORS(app, origins=origins, supports_credentials=True)
-
-
-
 app.register_blueprint(user)
 app.register_blueprint(post)
 app.register_blueprint(comment)
+
+CORS(app, origins=origins, supports_credentials=True)
 
 if __name__ == '__main__':
     print("I'm running app.py!")
