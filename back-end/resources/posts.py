@@ -57,14 +57,3 @@ def delete_post(id):
     (Post.delete().where(Post.id == id).execute())
     return jsonify(message='Post has been deleted'), 200
    
-
-# @post.route("/<int:id>", methods=["PUT"])
-# @login_required
-# def update_post(id):
-#     try:
-#         body = request.get_json()
-#         (Post.update(**body).where(Post.id == id).execute())
-#         post = Post.get_by_id(id)
-#         return jsonify(model_to_dict(post))
-#     except DoesNotExist:
-#         return jsonify(message="error getting resources"), 500

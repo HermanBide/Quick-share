@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from peewee import DoesNotExist
+from peewee import EXCLUDED, DoesNotExist
 from playhouse.shortcuts import model_to_dict
 from flask_login import current_user, login_required
 
@@ -21,7 +21,7 @@ def get_all_comments():
 def get_comment_by_id(id):
     try:
         comment = Comment.get_by_id(id)
-        return jsonify(model_to_dict(comment, backrefs=True)), 200
+        return jsonify(model_to_dict(comment, backrefs=True, exclude=[User.password])), 200
     except DoesNotExist:
         return jsonify(error='Error getting the comment resource!'), 500
 
@@ -29,7 +29,7 @@ def get_comment_by_id(id):
 @login_required
 def new_comment(post_id):
     body = request.get_json()
-    comment = Comment.create(**body, post_id=post_id)
+    comment = Comment.create(**body, post_id=post_id, user_id = current_user.id)
     comment_dict = model_to_dict(comment, exclude=[User.password])
     return jsonify(comment_dict), 201
  
