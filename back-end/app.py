@@ -48,7 +48,7 @@ def index():
 origins=['http://localhost:3000']
 
 if 'DATABASE_URL' in os.environ:
-    initialize([Post, User, Favorite,Comment])
+    initialize([User, Post, Favorite, Comment])
     app.config['SESSION_COOKIE_SECURE'] = True
     app.config['SESSION_COOKIE_HTTPONLY'] = False
     app.config['SESSION_COOKIE_SAMESITE'] = 'None'
