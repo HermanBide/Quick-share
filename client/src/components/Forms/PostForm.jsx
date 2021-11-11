@@ -48,11 +48,9 @@ const PostForm = (props) => {
   };
   return (
     <div className="review_body">
-
       <div className="form-box">
         <form className="form-form" onSubmit={handleSubmit}>
         <h4>Write a review on a movie</h4>
-
             <br /> 
             <input
               className="form-control"
@@ -158,7 +156,6 @@ const PostForm = (props) => {
           </button>
         </form>
       </div>
-      {/* <Link to="/postForm">review a movie</Link> */}
     </div>
   );
 };

@@ -4,8 +4,9 @@ import Navbar from "./components/Navbar";
 import Post from "./components/Post";
 import Comments from "./screens/Comments";
 import PostForm from "./components/Forms/PostForm";
-import CommentForm from "./components/Forms/CommentForm";
-import AddFav from "./screens/AddFav";
+// import CommentForm from "./components/Forms/CommentForm";
+// import AddFav from "./screens/AddFav";
+import Profile from "./components/Profile";
 import Movies from "./screens/Movies";
 import Favorites from "./screens/Favorites";
 import ReviewPage from "./screens/ReviewPage"
@@ -32,6 +33,10 @@ function App(props) {
 
         <Route path="/login">
           <Login setUser={setUser} />
+        </Route>
+
+        <Route path="/Profile">
+          <Profile user={user} />
         </Route>
        {/*REGISTRATION & LOGIN */}
 
