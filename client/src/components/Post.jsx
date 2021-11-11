@@ -62,7 +62,7 @@ const Post = (props) => {
             <button>edit</button>
           </Link>
           <button onClick={() => {deletePost(post.id)}}>delete</button>
-          <button className="icon"  type='submit' onClick={handleClick}><FavoriteIcon /></button>
+          {/* <button className="icon"  type='submit' onClick={handleClick}><FavoriteIcon /></button> */}
         </div>
       ))}
     </div>

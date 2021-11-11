@@ -148,7 +148,7 @@ const Movies = (props) => {
             <h4>{movie.Title}</h4>
             <h5>Release year: {movie.Year}</h5>
             <CardActions>
-              <button><AddFav /></button>
+            { props.user ? ( <button><AddFav /></button> ) : (<></> )}
             </CardActions>
           </Card>
       {/* </div> */}
