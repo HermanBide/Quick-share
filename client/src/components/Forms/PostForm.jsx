@@ -40,7 +40,7 @@ const PostForm = (props) => {
       genre,
     };
     if (postId) {
-      await updatePost(postId, newPost);
+      await updatePost(newPost, postId);
     } else {
       await createPost(newPost);
     }

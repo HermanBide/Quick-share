@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
 import "./Movies.css";
 import MoviePage from "./MoviePage";
+import AddFav from "./AddFav";
 
 const Movies = (props) => {
   const [searchValue, setSearchValue] = useState("");
@@ -13,14 +14,12 @@ const Movies = (props) => {
 
   const [movies, setMovies] = useState([
     {
-      Title: "Avengers: Infinity War",
-      Year: "2018",
-      imdbID: "tt4154756",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+      "Title": "Vacation Friends",
+      "Year": "2021",
+      "imdbID": "tt3626476",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZmI0YTY4YTYtODk4MS00ZWE3LWJjYzUtODAwOWM5YWY4MWUwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg"
     },
-
     {
       Title: "Venom: Let There Be Carnage",
       Year: "2021",
@@ -39,14 +38,12 @@ const Movies = (props) => {
         "https://m.media-amazon.com/images/M/MV5BMTZjZWYzYjMtMmNlYi00MTdkLWI4OTMtMmVhM2QzZjZiZTZiXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_SX300.jpg",
     },
     {
-      Title: "Candyman",
-      Year: "1992",
-      imdbID: "tt0103919",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BYjVjYjhlNTQtN2UxOC00Njk5LWFjNDctODNjZTI1ZGM0ZDZkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "Title": "Candyman",
+      "Year": "2021",
+      "imdbID": "tt9347730",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BOWEzNDAxYmEtYWU0Zi00ZjZjLTkxY2QtMGY1MjY5ZjVhNDdjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg"
     },
-
     {
       Title: "Eternals",
       Year: "2021",
@@ -73,12 +70,25 @@ const Movies = (props) => {
         "https://m.media-amazon.com/images/M/MV5BOTY2NzFjODctOWUzMC00MGZhLTlhNjMtM2Y2ODBiNGY1ZWRiXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
     },
     {
-      Title: "Dune",
-      Year: "1984",
-      imdbID: "tt0087182",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BYTAzYzNlMDMtMGRjYS00M2UxLTk0MmEtYmE4YWZiYmEwOTIwL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_SX300.jpg",
+      "Title": "Vivo",
+      "Year": "2021",
+      "imdbID": "tt6338498",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNDBiMGEzMTAtYTI2MS00NTgyLTlhNTItNmJiOTdhZTMyOTI1XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg"
+    },
+    {
+      "Title": "Dune",
+      "Year": "2021",
+      "imdbID": "tt1160419",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Raya and the Last Dragon",
+      "Year": "2021",
+      "imdbID": "tt5109280",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZWNiOTc4NGItNGY4YS00ZGNkLThkOWEtMDE2ODcxODEwNjkwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"
     },
   ]);
 
@@ -109,11 +119,15 @@ const Movies = (props) => {
   //   movie.Title.toLowerCase().includes(searchValue.toLowerCase())
   // )
 
+  // const handleClick = async (movie) => {
+  //   if(props.user.favorites.find((movie) => favorites.movie.Title == movie.Title))
+  // }
+
   return (
     <div>
 
       <header className="movie_header">
-        <h2>Movies</h2>
+        <h2>Share flicks</h2>
         {/* <form className="search_bar" onSubmit={handleChange}>
           <input type="text" id="search" placeholder="movie name?" className="movie_input" />
           <button onChange={(e) => setSearchValue(e.target.value)}>search</button>
@@ -134,6 +148,7 @@ const Movies = (props) => {
             <h4>{movie.Title}</h4>
             <h5>Release year: {movie.Year}</h5>
             <CardActions>
+              <button><AddFav /></button>
             </CardActions>
           </Card>
       {/* </div> */}

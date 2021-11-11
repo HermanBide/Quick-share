@@ -101,9 +101,9 @@ export const createPost = async (newPost) => {
   }
 }
 
-export const updatePost = async (id) => {
+export const updatePost = async (newPost, id) => {
   try {
-    await axios.put(`${apiURL}/posts/${id}`);
+    await axios.put(`${apiURL}/posts/${id}`,newPost);
   } catch (error) {
     console.error(error.message);
   }

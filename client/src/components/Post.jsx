@@ -39,6 +39,7 @@ const Post = (props) => {
     <div className="post_page">
       {posts.map((post) => (
         <div className="post_card">
+        <h4 style={{color: "#4895ef"}}>{props.user.username}</h4>
           <div className="titles">
             <div className="Review_div">Movie Title</div>
             <div className="Review_div">Release date</div>
