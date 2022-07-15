@@ -10,12 +10,6 @@ My app focuses on movie review. user will have the ability to rate
 
 ## Wireframes
 
-![Screenshot from 2021-11-01 16-44-01](https://user-images.githubusercontent.com/89764557/139756639-92f69f13-9f52-4aa9-93b7-8890c0b81ec1.png)
-![Screenshot from 2021-11-01 16-47-47](https://user-images.githubusercontent.com/89764557/139757793-3281504a-6151-43e5-a2ea-963e02f67dd2.png)
-
-![Screenshot from 2021-11-01 16-48-24](https://user-images.githubusercontent.com/89764557/139757798-b8081c84-7437-4f12-b8b7-3d6cb419b075.png)
-
-
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
 ## Component Hierarchy
